@@ -1,0 +1,12 @@
+# Wallpaper Background
+#xwallpaper --output VGA1 --zoom ~/Pictures/bg_default/default_wallpaper.jpg
+~/.xbg
+
+# Panel
+tint2 &
+
+# X Compositor
+picom -b --config ~/.config/picom/open-picom.conf
+
+# VolumeIcon
+#volumeicon &

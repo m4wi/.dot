@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+echo "# Clean .cache files... "
+rm -rf ~/.cache
+
+echo "# Clean trash files... "
+echo "    -> Cleaning Trash Info"
+rm -rf ~/.local/share/Trash/info/*
+
+echo "    -> Cleaning Trash Files"
+rm -rf ~/.local/share/Trash/files/*
+
+echo "# Reset Logs"
+echo "  -> Reset xsession log"
+  echo "" > ~/.xsession-errors
+echo "  -> Reset xsession.old log"
+  echo "" > ~/.xsession-errors.old
+echo "  -> Reset .bash_history log"
+  echo "" > ~/.bash_history
+
+echo "# Cleaning pacman cache... "
+sudo paru -Sc
+
+echo "# Update pacman mirror list"
+sudo reflector \
+--save /etc/pacman.d/mirrorlist \
+--ipv4 \
+--ipv6 \
+--protocol https \
+--latest 20 \
+--sort rate
+
+echo "# Update System"
+sudo pacman -Syu

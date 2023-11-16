@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Installation script
+# by: mawi
+
+
+if [ -e "$HOME/.config/bspwm" ]; then
+  echo "El enlace simbólico existe."
+else
+  echo "El enlace simbólico no existe."
+fi
+

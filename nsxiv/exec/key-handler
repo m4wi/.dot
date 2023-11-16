@@ -1,0 +1,18 @@
+#!/bin/sh
+while read file
+do
+  case "$1" in
+  "w") 	
+    swall "$file"
+    sleep 1
+    wal -i "$file" -n -s
+    sleep 1
+    /home/kezo/.config/nsxiv/exec/setDefault.sh
+    cp ~/.cache/wal/colors.Xresources ~/.Xresources
+    xrdb ~/.Xresources
+    notify-send "Enjoy your new colorscheme!" ;;
+
+  "y")
+    notify-send "$file copied to clipboard!"
+  esac
+done
