@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# array definition
+options=("  Shutdown" "⭘  Reboot" "󰤄  Suspend" "  Lock" "󰗼  Exit")
+
+# display menu
+selected_option=$(printf "%s\n" "${options[@]}" | dmenu -l ${#options[@]} -p "System:")
+
+case "$selected_option" in
+  "  Shutdown") systemctl poweroff ;;
+  "⭘  Reboot")   systemctl reboot ;;
+  "󰤄  Suspend")  systemctl suspend ;;
+  "  Lock")     echo "Lock" ;;  # Ajusta esto según tu comando para bloquear la pantalla
+  "󰗼  Exit")     kill -9 -1 ;;
+  *)          exit 1 ;;
+esac

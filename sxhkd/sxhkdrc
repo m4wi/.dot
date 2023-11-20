@@ -14,6 +14,8 @@ super + r
 super + shift + r
   rofi -show drun
 
+super + shift + p
+  dmenu_power
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -21,6 +23,9 @@ super + Escape
 # Launch file manager
 super + e
   pcmanfm
+
+# Suspend Session
+#super + shift + fin
 
 #
 # bspwm hotkeys

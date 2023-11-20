@@ -10,6 +10,9 @@ rm -rf ~/.local/share/Trash/info/*
 echo "    -> Cleaning Trash Files"
 rm -rf ~/.local/share/Trash/files/*
 
+echo "# Optimize Firefox SQLite"
+profile-cleaner f
+
 echo "# Reset Logs"
 echo "  -> Reset xsession log"
   echo "" > ~/.xsession-errors
@@ -18,8 +21,11 @@ echo "  -> Reset xsession.old log"
 echo "  -> Reset .bash_history log"
   echo "" > ~/.bash_history
 
+echo "# Clean journal logs"
+sudo rm -rf /var/log/journal/*
+
 echo "# Cleaning pacman cache... "
-sudo paru -Sc
+sudo paru -Scc
 
 echo "# Update pacman mirror list"
 sudo reflector \

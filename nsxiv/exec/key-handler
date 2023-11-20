@@ -10,6 +10,7 @@ do
     /home/kezo/.config/nsxiv/exec/setDefault.sh
     cp ~/.cache/wal/colors.Xresources ~/.Xresources
     xrdb ~/.Xresources
+    /home/kezo/.config/nsxiv/exec/bspcolor_reload
     notify-send "Enjoy your new colorscheme!" ;;
 
   "y")
